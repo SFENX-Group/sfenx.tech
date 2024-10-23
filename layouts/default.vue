@@ -6,6 +6,12 @@
     dark:bg-[#0b0e11] bg-gray-100
     "
   >
-    <NuxtPage />
+    <div class="fixed top-0 -left-[25%] z-0 w-full h-full flex justify-center items-center">
+      <Cube class="scale-[2] opacity-50" />
+    </div>
+    <!-- <Navbar /> -->
+    <div class="flex w-full h-full flex z-10">
+      <NuxtPage />
+    </div>
   </div>
 </template>
