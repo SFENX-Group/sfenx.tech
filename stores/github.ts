@@ -1,3 +1,4 @@
+import appConfig from '~/app.config'
 import type { GitHubUser } from '~/types'
 
 export const useGithubStore = defineStore('github', () => {
@@ -8,18 +9,29 @@ export const useGithubStore = defineStore('github', () => {
     'TufanPirihan',
     'bura2k',
     'MahserMidillisi',
+    'synax',
   ]
 
   const sfenxTeam = ref<GitHubUser[]>()
 
   const fetchSfenxTeam = async () => {
     const _temp: GitHubUser[] = []
-    _sfenxTeamUsernames.forEach(async (username: string) => {
-      await fetch(`https://api.github.com/users/${username}`)
-        .then(async (_res) => {
-          _temp.push(await _res.json())
+    const config = useRuntimeConfig()
+    const token = config.public.GIT_AUTH_TOKEN
+
+    await Promise.all(
+      _sfenxTeamUsernames.map(async (username: string) => {
+        await fetch(`https://api.github.com/users/${username}`, {
+          headers: {
+            Authorization: `token ${token}`,
+          },
         })
-    })
+          .then(async (_res) => {
+            _temp.push(await _res.json())
+          })
+      }),
+    )
+
     sfenxTeam.value = _temp
   }
 
