@@ -1,5 +1,12 @@
 <template>
-  <div class="cube-container">
+  <div
+    class="cube-container
+    flex absolute
+    lg:bottom-64 lg:left-36 lg:scale-[2]
+    md:bottom-56 md:left-24 md:scale-[1.8]
+    bottom-24 left-0 scale-[1.9]
+    "
+  >
     <div class="cube">
       <div class="face front" />
       <div class="face back" />
@@ -49,38 +56,38 @@
 
 .front {
   transform: translateZ(100px);
-  background-color: #1d9aa0;
-  background-image: linear-gradient(160deg, #1d9aa0 0%, #80d0c7 100%);
+  background-color: #11d191;
+  background-image: linear-gradient(160deg, #11d191 0%, #80d0c7 100%);
 }
 
 .back {
   transform: rotateY(180deg) translateZ(100px);
-  background-color: #1d9aa0;
-  background-image: linear-gradient(160deg, #1d9aa0 0%, #80d0c7 100%);
+  background-color: #11d191;
+  background-image: linear-gradient(160deg, #11d191 0%, #80d0c7 100%);
 }
 
 .right {
   transform: rotateY(90deg) translateZ(100px);
-  background-color: #1d9aa0;
-  background-image: linear-gradient(160deg, #1d9aa0 0%, #80d0c7 100%);
+  background-color: #11d191;
+  background-image: linear-gradient(160deg, #11d191 0%, #80d0c7 100%);
 }
 
 .left {
   transform: rotateY(-90deg) translateZ(100px);
-  background-color: #1d9aa0;
-  background-image: linear-gradient(160deg, #1d9aa0 0%, #80d0c7 100%);
+  background-color: #11d191;
+  background-image: linear-gradient(160deg, #11d191 0%, #80d0c7 100%);
 }
 
 .top {
   transform: rotateX(90deg) translateZ(100px);
-  background-color: #1d9aa0;
-  background-image: linear-gradient(160deg, #1d9aa0 0%, #80d0c7 100%);
+  background-color: #11d191;
+  background-image: linear-gradient(160deg, #11d191 0%, #80d0c7 100%);
 }
 
 .bottom {
   transform: rotateX(-90deg) translateZ(100px);
-  background-color: #1d9aa0;
-  background-image: linear-gradient(160deg, #1d9aa0 0%, #80d0c7 100%);
+  background-color: #11d191;
+  background-image: linear-gradient(160deg, #11d191 0%, #80d0c7 100%);
 }
 
 @keyframes rotate {

@@ -1,17 +1,25 @@
 <template>
   <div
-    class="fixed top-0 left-0
-    flex flex-col justify-between items-center
-    w-full h-full overflow-hidden
-    dark:bg-[#0b0e11] bg-gray-100
-    "
+    class="
+    --Scrollbar
+  [&::-webkit-scrollbar]:w-2
+  [&::-webkit-scrollbar-track]:rounded-full
+  [&::-webkit-scrollbar-track]:bg-gray-100
+  [&::-webkit-scrollbar-thumb]:rounded-full
+  [&::-webkit-scrollbar-thumb]:bg-gray-300
+  dark:[&::-webkit-scrollbar-track]:bg-neutral-700
+  dark:[&::-webkit-scrollbar-thumb]:bg-[#11d191]
+
+  --Contianer
+  fixed top-o left-0 w-full h-full
+  flex flex-col items-center
+  gap-16
+  overflow-y-auto overflow-x-hidden
+  bg-primary-1
+  pb-8
+  "
   >
-    <div class="fixed top-0 -left-[25%] z-0 w-full h-full flex justify-center items-center">
-      <Cube class="scale-[2] opacity-50" />
-    </div>
-    <!-- <Navbar /> -->
-    <div class="flex w-full h-full flex z-10">
-      <NuxtPage />
-    </div>
+    <AppHeader />
+    <slot />
   </div>
 </template>

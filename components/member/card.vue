@@ -7,9 +7,13 @@ defineProps<{
 </script>
 
 <template>
-  <div class="flex text-primary-900 dark:text-primary-100 w-[200px] items-center gap-2 m-2 flex justify-center montserrat">
-    <NuxtImg :src="member?.avatar_url" class="w-12 rounded-full" />
-    <label> {{ member?.name ?? member?.login }} </label>
+  <div class="flex gap-2">
+    <div class="dark:text-gray-950 text-white p-2 rounded">
+      <NuxtImg :src="member?.avatar_url" class="w-12 rounded-full" />
+    </div>
+    <!-- <div class="w-64 dark:bg-white dark:text-gray-950 bg-gray-950 text-white">
+      {{ member?.name }}
+    </div> -->
   </div>
 </template>
 
