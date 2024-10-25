@@ -9,7 +9,7 @@ export const useGithubStore = defineStore('github', () => {
     'TufanPirihan',
     'bura2k',
     'MahserMidillisi',
-    'synax',
+    'synax01',
   ]
 
   const sfenxTeam = ref<GitHubUser[]>()
